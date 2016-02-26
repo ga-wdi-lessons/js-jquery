@@ -12,6 +12,17 @@
 - Compare code examples in Vanilla JS and jQuery.
 - Define `$(document).ready()` and some jQuery methods.
 
+## Framing
+
+jQuery is the world's most widely-used Javascript library. Its slogan is "write less; do more".
+
+Which is easier to write?
+
+```js
+document.querySelectorAll(".hello")
+$(".hello")
+```
+
 ## Selecting DOM elements using Vanilla JS (20min)
 
 Before we talk about jQuery, I want to make sure we're on top of our Javascript -- or as we'll refer to it today, "Vanilla JS" -- selectors.
