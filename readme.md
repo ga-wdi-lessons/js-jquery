@@ -290,3 +290,8 @@ https://github.com/ga-wdi-exercises/atm
 - [Our own jQuery cheat sheet](./jquery-cheat-sheet.md)
 - [The very thorough jQuery documentation](https://api.jquery.com/)
 - [Download the jQuery documentation](http://www.jqapi.com/)
+- Screencasts
+  - DC WDI 8
+    - [Part 1](https://www.youtube.com/watch?v=zGOanC3Tecw)
+    - [Part 2](https://www.youtube.com/watch?v=DsooqVO6PMQ)
+    - [Part 3](https://www.youtube.com/watch?v=6889LvuSUpc)
