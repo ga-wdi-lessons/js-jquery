@@ -1,4 +1,4 @@
-# jQuery: Part I
+# jQuery
 
 ## Learning Objectives
 
