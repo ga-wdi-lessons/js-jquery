@@ -46,17 +46,18 @@ We'll revisit this after talking about jQuery for a bit...
 ## Intro to jQuery (10min)
 
 ### Javascript library
-What is a library?
+What is a **library**?
 - Q: Has anybody used a JS library before?
 - A collection of Javascript functions and methods that make writing Javascript an easier, smoother and ultimately shorter experience.
 - Under the hood, all Javascript libraries are written using Javascript. So technically, there is nothing you can do using a library that can't already be done using Vanilla JS.
 - There are tons of them: [https://www.javascripting.com/](https://www.javascripting.com/)
   - Some suited for particular uses like data visualization(D3.js), 3D imaging (Three.js), charts (Chart.js), autocomplete functionality (Typeahead.js) and many more...
 
-Not the same thing as a Javascript framework.
+Not the same thing as a Javascript **framework**.
 - Not only provides tools like a library does, but also defines the architecture of your code (e.g., syntax, folder structure). Basically, a set of rules you have to follow.
 - Examples: AngularJS, Ember.js.
 
+![Famework vs. Library](architecture-framework-libraries.png)
 
 Sometimes "library" and "framework" are used interchangeably, but they are not the same. The difference will be more apparent as you get some experience with both as the course progresses.  
 
@@ -150,6 +151,10 @@ $("Juan");
 
 We Do: What would `$( "h2" ).html();` look like in Javascript?
 
+### You Do: My Blawg, Part 2
+
+Reference: [https://api.jquery.com/](https://api.jquery.com/)
+
 ## The jQuery object
 
 - `$("h2")` returns something that behaves like an array, but *isn't* an array
@@ -182,9 +187,21 @@ console.log(document.querySelectorAll("h2").eq(1).html());
 console.log(document.querySelectorAll("h2")[1].html());
 ```
 
-### You Do: My Blawg, Part 2
+### jQuery vs DOM objects
 
-Reference: [https://api.jquery.com/](https://api.jquery.com/)
+```js
+$("h2")
+$("h2")[0]
+
+document.querySelectorAll("h2")
+document.querySelectorAll("h2")[0]
+
+$('h2')[0] == document.querySelectorAll('h2')[0]
+// > true
+
+$('h2') == document.querySelectorAll('h2')
+// > cfalse
+```
 
 ## jQuery vs. Vanilla JS (10min)
 
