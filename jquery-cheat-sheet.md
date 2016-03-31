@@ -2,9 +2,11 @@
 
 ## Learning Objectives
 - Use jQuery to:
-  - add elements to the DOM using jQuery objects and functions
-  - change elements in the DOM using jQuery objects and functions
-  - add event listeners to elements in the DOM using jQuery objects and functions
+  - select elements from the DOM
+  - get & modify elements/content in the DOM
+  - add elements to the DOM
+  - remove elements from the DOM
+  - respond to events on the DOM
   - loop through jQuery objects using the `each()` method
 
 ## Setup
@@ -27,7 +29,7 @@ in `index.html`:
     <script src="script.js"></script>
   </head>
   <body>
-    <h1>If you can see this in your browser, your Javascript/jQuery isn't working!</h1>
+    <h1>If you can see this in your browser, your Javascript/jQuery is not working!</h1>
   </body>
 </html>
 ```
@@ -42,8 +44,50 @@ $(document).ready(function(){
   }
 });
 ```
+## Selecting elements
+
+
+## Modify content
+
+- `.html()`
+  - get or set the HTML contents
+    - get: no argument, know that it returns the innerHTML of the first jQuery object
+
+  ```javascript
+    $(".awesome").html()
+    // returns the innerHTML of the first element in the jQuery object
+  ```
+
+    - set: one argument that you want the html content to be
+
+  ```javascript
+    $(".awesome").html("this is awesome!")
+    // returns the innerHTML of the of all elements in the jQuery object to be "this is awesome!"
+  ```
+
+- `.text()`
+  - get or set the text contained, it will strip the HTML elements
+  - same as `.html()` only it returns the text of all jQuery objects selected for the getter portion
+
+Add an input tag to the `index.html`:
+
+```html
+<input type="text" class="search" placeholder="some text here ....">
+```
+
+- `.css()`
+  - acts as both a getter and setter
+    - setter: requires 2 arguments(key/value pair), or an object(with multiple key/value pairs)
+    - getter: requires 1 argument to get the value of the attribute from the jQuery object
+
+- `.val()`
+  - setter: pass in an argument
+  - getter: pass in no argument
+
+> We need to be able to get information from users. Input tags are a great way to do that. But more importantly we need to be able to access those values so that our JS can act on it. Think about auto complete on search forms. As we type something into google, it starts giving us options. For every key stroke we make, the callback that is fired is probably using some form of `.val()`. This will also be extremely important moving forward in week 7 with AJAX.
 
 ## Adding content
+
 - `.append()`
   - the selector expression preceding the method is the container into which the content(argument) is inserted as the last child
 
@@ -78,27 +122,8 @@ $(document).ready(function(){
 
   > Think about how facebook statuses work. When we add a new status, does it go to the bottom of the list? or is it right at the top? Maybe they're using a prepend here ...
 
-- `.html()`
-  - get or set the HTML contents
-    - get: no argument, know that it returns the innerHTML of the first jQuery object
-
-    ```javascript
-      $(".awesome").html()
-      // returns the innerHTML of the first element in the jQuery object
-    ```
-
-    - set: one argument that you want the html content to be
-
-    ```javascript
-      $(".awesome").html("this is awesome!")
-      // returns the innerHTML of the of all elements in the jQuery object to be "this is awesome!"
-    ```
-
-- `.text()`
-  - get or set the text contained, it will strip the HTML elements
-  - same as `.html()` only it returns the text of all jQuery objects selected for the getter portion
-
 ## Removing content
+
 - `.remove()`
   - removes the jquery object it is called on, as well as bound events and everything inside it
 
@@ -115,21 +140,21 @@ $(document).ready(function(){
 
   > Note: when we call the above code, we'll actually be emptying all content from any element with the class of 'awesome'
 
-Add an input tag to the `index.html`:
+## Responding to events
 
-```html
-<input type="text" class="search" placeholder="some text here ....">
-```
+- `.on()`
+  - a way to create event listeners
+  - takes two arguments normally
+    - first argument is the event(lots of them)
+    - second argument is the callback
 
-- `.css()`
-  - acts as both a getter and setter
-    - setter: requires 2 arguments(key/value pair), or an object(with multiple key/value pairs)
-    - getter: requires 1 argument to get the value of the attribute from the jQuery object
-- `.val()`
-  - setter: pass in an argument
-  - getter: pass in no argument
+  ```javascript
+    $(".awesome").on("click", function(){
+      console.log($(this))
+    })
+  ```
 
-> We need to be able to get information from users. Input tags are a great way to do that. But more importantly we need to be able to access those values so that our JS can act on it. Think about auto complete on search forms. As we type something into google, it starts giving us options. For every key stroke we make, the callback that is fired is probably using some form of `.val()`. This will also be extremely important moving forward in week 7 with AJAX.
+> What is `$(this)` here? Refers to the jquery object you called `.on` on, as long as you're in the scope of the `.on` function
 
 ### Other
 - `.hide()`
@@ -185,18 +210,3 @@ Add an input tag to the `index.html`:
 > note what the context of `$(this)` is. This refers to each of the elements being looped through.
 
 > This also is actually the second time in this lesson a jquery function requires a callback, can you think of the other?
-
-
-- `.on()`
-  - a way to create event listeners
-  - takes two arguments normally
-    - first argument is the event(lots of them)
-    - second argument is the callback
-
-    ```javascript
-      $(".awesome").on("click", function(){
-        console.log($(this))
-      })
-    ```
-
-> What is `$(this)` here? Refers to the jquery object you called `.on` on, as long as you're in the scope of the `.on` function

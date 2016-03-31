@@ -108,12 +108,12 @@ What is a CDN?
 Include with a `<script>` tag in HTML that links to some URL.
 - Keep this handy: `<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>`
 
-## jQuery Selectors (20min)
+## jQuery Selectors (5min)
 
 The most basic concept of jQuery is to "select some elements and do something with them." Most jQuery looks like this:
 
 ```js
-jQuery("h2").html("Hello");
+$("h2").html("Hello");
 ```
 
 This says "Select every `<h2>` and change its inner HTML to 'Hello'."
@@ -122,7 +122,7 @@ This says "Select every `<h2>` and change its inner HTML to 'Hello'."
 
 Let's break it down:
 
-- The selector: `jQuery( "h2" )`
+- The selector: `$( "h2" )`
   - Select a DOM element by its CSS selector.
   - jQuery runs the equivalent of `document.querySelectorAll()` on the DOM element you are selecting.
     - Q: What does `querySelectorAll()` do in Vanilla JS?
@@ -132,28 +132,13 @@ Let's break it down:
   - In this example we're looking at `.html()`, which returns the HTML contents of a DOM object.
   - We'll go over a few today, and you'll go over a lot more of them with Andy during your second jQuery class.
 
-### Wrap it in cash
-
-Instead of writing `jQuery("h2")`, you can just write `$("h2")`. They do the same thing. Almost no-one writes `jQuery`.
-
-`$` isn't a special character -- it's the name of a function. It returns a jQuery object.
-
-I can create my own `$` function:
-
-```js
-function $(name){
-  alert(name + " is wrapped in cash.");
-}
-$("Juan");
-```
-
-> Confusingly, Chrome has its own built-in `$()` function, which is completely unrelated.
-
 We Do: What would `$( "h2" ).html();` look like in Javascript?
 
-### You Do: My Blawg, Part 2
+### You Do: My Blawg, Part 2 (15min)
 
-Reference: [https://api.jquery.com/](https://api.jquery.com/)
+Reference:
+- [https://api.jquery.com/](https://api.jquery.com/)
+- [Our own jQuery cheat sheet](./jquery-cheat-sheet.md)
 
 ## The jQuery object
 
@@ -163,7 +148,7 @@ Reference: [https://api.jquery.com/](https://api.jquery.com/)
 
 jQuery objects *look* like regular arrays or DOM elements, but they're very different
 
-### You Do: jQuery vs DOM objects
+### You Do: jQuery vs DOM objects (10min)
 
 Try the following snippets in your Chrome console. What's the difference between `[]` and `.eq()`?
 
@@ -187,7 +172,7 @@ console.log(document.querySelectorAll("h2").eq(1).html());
 console.log(document.querySelectorAll("h2")[1].html());
 ```
 
-### jQuery vs DOM objects
+### jQuery vs DOM objects (5min)
 
 ```js
 $("h2")
@@ -200,7 +185,7 @@ $('h2')[0] == document.querySelectorAll('h2')[0]
 // > true
 
 $('h2') == document.querySelectorAll('h2')
-// > cfalse
+// > false
 ```
 
 ## jQuery vs. Vanilla JS (10min)
@@ -234,7 +219,21 @@ The jQuery methods we will be going over today are both "getters" and "setters".
   - Setter: sets/replaces a value
   - The version of the method that is triggered depends on how many arguments are fed into it.
 
+```js
+// Vanilla JS
+doucment.queryselctor('h2')innerHTML            // getter
+doucment.queryselctor('h2')innerHTML = "hello"  // setter
+
+//jQuery
+$('h2').eq(0).html()         //getter
+$('h2').eq(0).html("hello")  //setter
+```
+
 ### You Do: My Blawg, Part 3
+
+Reference:
+- [https://api.jquery.com/](https://api.jquery.com/)
+- [Our own jQuery cheat sheet](./jquery-cheat-sheet.md)
 
 ## Event listeners
 
@@ -270,7 +269,9 @@ $(document).on("ready", function(){
 
 Code included inside `$( document ).ready()` will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.
 
-**If your Javascript isn't working, the first thing to check is whether your code is wrapped inside `$(document).ready()`.**
+**Using `$( document ).ready()` allows us to put our `<script src="whateverOurJsIsCalled.js"></script>` tag in the `<head>` instead of the `<body>`**
+
+_If your Javascript isn't working, the first thing to check is whether your code is wrapped inside `$(document).ready()`._
 
 Given this:
 
@@ -289,10 +290,27 @@ $("h2").click(function(){
 ```js
 $(document).on("ready", function(){
 
-});
+  // Blank!
 
-// Blank!
+});
 ```
+
+### _Bonus_ Wrap it in cash
+
+Instead of writing `$("h2")`, you can just write `jQuery("h2")`. They do the same thing. Almost no-one writes `jQuery`.
+
+`$` isn't a special character -- it's the name of a function. It returns a jQuery object.
+
+I can create my own `$` function:
+
+```js
+function $(name){
+  alert(name + " is wrapped in cash.");
+}
+$("Juan");
+```
+
+> Confusingly, Chrome has its own built-in `$()` function, which is completely unrelated.
 
 ## Homework: Final Countdown
 
