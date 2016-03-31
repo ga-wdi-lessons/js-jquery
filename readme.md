@@ -12,7 +12,7 @@
 - Compare code examples in Vanilla JS and jQuery.
 - Define `$(document).ready()` and some jQuery methods.
 
-## Framing
+## Framing (5min)
 
 jQuery is the world's most widely-used Javascript library. Its slogan is "write less; do more".
 
@@ -23,7 +23,7 @@ document.querySelectorAll(".hello")
 $(".hello")
 ```
 
-## Selecting DOM elements using Vanilla JS (20min)
+## Selecting DOM elements using Vanilla JS (20min/25)
 
 Before we talk about jQuery, I want to make sure we're on top of our Javascript -- or as we'll refer to it today, "Vanilla JS" -- selectors.
 
@@ -32,7 +32,7 @@ If I want to select a DOM element using Vanilla JS, how would I do that?
 
 Before we dive into the world of jQuery, let's make sure we've got our Vanilla JS selectors down pat with an exercise...
 
-### Exercise: JS Selector Review (10min)
+### Exercise: JS Selector Review (10min/35)
 
 Follow along with "My Blawg": https://github.com/ga-wdi-exercises/my-blawg
 - Clone: `$ git clone https://github.com/ga-wdi-exercises/my-blawg.git`
@@ -43,7 +43,7 @@ Follow along with "My Blawg": https://github.com/ga-wdi-exercises/my-blawg
 
 We'll revisit this after talking about jQuery for a bit...  
 
-## Intro to jQuery (10min)
+## Intro to jQuery (10min/45)
 
 ### Javascript library
 What is a **library**?
@@ -75,7 +75,7 @@ Like Javascript, jQuery works in all browsers.
 
 Because of all this, jQuery is the most popular JS library on the web.  
 
-## Setting up jQuery (10min)
+## Setting up jQuery (10min/55)
 
 There are two ways to go about including jQuery on a website.
 - In both cases, we include the jQuery script file (`jquery-2.1.4.js`) as we would our usual app.js file using `<script>`.
@@ -108,7 +108,7 @@ What is a CDN?
 Include with a `<script>` tag in HTML that links to some URL.
 - Keep this handy: `<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>`
 
-## jQuery Selectors (5min)
+## jQuery Selectors (5min/60)
 
 The most basic concept of jQuery is to "select some elements and do something with them." Most jQuery looks like this:
 
@@ -134,13 +134,15 @@ Let's break it down:
 
 We Do: What would `$( "h2" ).html();` look like in Javascript?
 
-### You Do: My Blawg, Part 2 (15min)
+### You Do: My Blawg, Part 2 (15min/75)
 
 Reference:
 - [https://api.jquery.com/](https://api.jquery.com/)
 - [Our own jQuery cheat sheet](./jquery-cheat-sheet.md)
 
-## The jQuery object
+## Break (5min/80)
+
+## The jQuery object (10min/90)
 
 - `$("h2")` returns something that behaves like an array, but *isn't* an array
   - If I `console.dir(jQuery("h2"))` I can see that it has a bunch of extra properties
@@ -148,7 +150,7 @@ Reference:
 
 jQuery objects *look* like regular arrays or DOM elements, but they're very different
 
-### You Do: jQuery vs DOM objects (10min)
+### You Do: jQuery vs DOM objects
 
 Try the following snippets in your Chrome console. What's the difference between `[]` and `.eq()`?
 
@@ -172,7 +174,7 @@ console.log(document.querySelectorAll("h2").eq(1).html());
 console.log(document.querySelectorAll("h2")[1].html());
 ```
 
-### jQuery vs DOM objects (5min)
+### jQuery vs DOM objects (5min/95)
 
 ```js
 $("h2")
@@ -188,7 +190,7 @@ $('h2') == document.querySelectorAll('h2')
 // > false
 ```
 
-## jQuery vs. Vanilla JS (10min)
+## jQuery vs. Vanilla JS (10min/105)
 
 Q: Now that we've gone over jQuery for a bit, what are some reasons you think somebody would use jQuery over Vanilla JS?
 - What about Vanilla JS over jQuery?
@@ -208,7 +210,7 @@ Make sure you're familiar with Vanilla JS and jQuery, but use whichever one you 
 
 Onto some jQuery methods!
 
-## Getters and setters (10min)
+## Getters and setters (10min/115)
 
 Sometimes we want to select a particular aspect of a DOM element, like its HTML content or CSS properties.
 - That's where jQuery's methods come in.
@@ -229,13 +231,15 @@ $('h2').eq(0).html()         //getter
 $('h2').eq(0).html("hello")  //setter
 ```
 
-### You Do: My Blawg, Part 3
+### You Do: My Blawg, Part 3 (15min/130)
 
 Reference:
 - [https://api.jquery.com/](https://api.jquery.com/)
 - [Our own jQuery cheat sheet](./jquery-cheat-sheet.md)
 
-## Event listeners
+## Break 2 (5min/135)
+
+## Event listeners (5min/140)
 
 What does this do?
 
@@ -257,7 +261,7 @@ Most event listeners have a jQuery method named after them.
 
 Instead of writing `.on("click", function(){})` you can just write `.click(function(){})`;
 
-## Document ready
+## Document ready (10min/150)
 
 What does this do?
 
@@ -295,7 +299,7 @@ $(document).on("ready", function(){
 });
 ```
 
-### _Bonus_ Wrap it in cash
+### _Bonus_ Wrap it in cash (5min)
 
 Instead of writing `$("h2")`, you can just write `jQuery("h2")`. They do the same thing. Almost no-one writes `jQuery`.
 
@@ -312,13 +316,17 @@ $("Juan");
 
 > Confusingly, Chrome has its own built-in `$()` function, which is completely unrelated.
 
-## Homework: Final Countdown
+## Exit Ticket (3 min)
 
-https://github.com/ga-wdi-exercises/final-countdown
+Before you leave, plase take ~3 minutes to complete [this exit ticket.](https://docs.google.com/forms/d/1d03NYFphG6m7yAMUY1OlnJZMQWof7Rt6b5MX3Xn4ZPs/viewform)
+
+## Homework: Pixart
+
+https://github.com/ga-wdi-exercises/pixart_js
 
 ## Other exercises
 
-https://github.com/ga-wdi-exercises/atm
+https://github.com/ga-wdi-exercises/final-countdown
 
 ## References
 
