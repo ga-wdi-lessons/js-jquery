@@ -10,7 +10,8 @@
 - Differentiate between DOM and jQuery objects.
 - Explain when and how to use Vanilla JS vs. jQuery.
 - Compare code examples in Vanilla JS and jQuery.
-- Define `$(document).ready()` and some jQuery methods.
+- Use $(document).ready() to prevent JS from running before the page has loaded.
+- Use jQuery methods to get information from, create, and modify DOM elements
 
 ## Framing (5min)
 
@@ -261,7 +262,7 @@ Most event listeners have a jQuery method named after them.
 
 Instead of writing `.on("click", function(){})` you can just write `.click(function(){})`;
 
-## Document ready (10min/150)
+  ## Document ready (10min/150)
 
 What does this do?
 
@@ -270,6 +271,7 @@ $(document).on("ready", function(){
   alert("Loaded!");
 });
 ```
+> A shortcut for .on("ready", function(){}); is to write it as .ready(function(){});
 
 Code included inside `$( document ).ready()` will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.
 
@@ -292,7 +294,7 @@ $("h2").click(function(){
 ...fill in the blank:
 
 ```js
-$(document).on("ready", function(){
+$(document).ready(function(){
 
   // Blank!
 
