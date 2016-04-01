@@ -120,31 +120,50 @@ Add an input tag to the `index.html`:
   // will return a created div and store it in the variable element
   ```
 
-- `element.appendChild()` [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+- _element_`.appendChild()` [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+  - adds a node to the end of the lis of children of a specified parentNode
 
-- `element.insertBefore()` [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore)
+  ```js
+  var child = element.appendChild(newChildElement);
+  // appends the newChildElement as a child of element, stores this in the variable child
+  ```
+
+- _element_`.insertBefore(newNode, referenceNode)` [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore)
+  - inserts the specified element before the reference node as a child of the current element
+
+  ```js
+  var insertedNode = parentNode.insertBefore(newNode, referenceNode);
+  ```
 
   > Think about how facebook statuses work. When we add a new status, does it go to the bottom of the list? or is it right at the top? Maybe they're using a prepend here ...
 
 ## Removing content
 
-- `element.removeChild()`
+- _element_`.removeChild()` [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 
-- `element.innerHTML = ''`
+- _element_`.innerHTML = ''`
+  - can be used to replace all of the contents of an element with nothing (an empty string) - see above description for usage
 
 ## Responding to events
 
-- `element.addEventListener('event', callbackFn)`
+- _element_`.addEventListener('event', callbackFn)` [documentation](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
   - a way to create event listeners
   - takes two arguments normally
     - first argument is the event(lots of them)
-    - second argument is the callback
+    - second argument is the callback, this can be a **reference** to a function created someplace or an anonymous function created here
 
     ```javascript
+    element.addEventListener('click', doSomething);
+    // add a listener for click events on the specified element and calls the named doSomething function
 
+    element.addEventListener('click', function() {
+      console.log(this);
+    });
+    // add a listener for click events on the specified element and calls an anonymous function
     ```
 
-> What is `$(this)` here? Refers to the jquery object you called `.on` on, as long as you're in the scope of the `.on` function
+> What is `this` here?
+`this` Refers to the DOM element you called that had the event listener
 
 ### Other
 

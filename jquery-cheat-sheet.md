@@ -46,6 +46,14 @@ $(document).ready(function(){
 ```
 ## Selecting elements
 
+- `$()`
+  - will return all the elements that match the selector given as a jQuery collection
+  - the selector can be any valid CSS selector
+
+  ```javascript
+  $('div .pizza')
+  // will select and return all divs with the class of pizza
+  ```
 
 ## Modify content
 
